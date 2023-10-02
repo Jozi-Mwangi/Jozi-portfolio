@@ -33,13 +33,13 @@ const Nav = () => {
             <div className="flex mx-auto md:px-24 justify-between w-full items-center" >
                 <div className=''><Image src="/profile.png" height={50} className='rounded-full' width={50} alt='profile' /></div>
 
-                <div onClick={handleNav} className="block md:hidden" >
+                <div onClick={handleNav} className="block lg:hidden" >
                     <div className='right-5' >
                         { nav? <MdMenu size={40}/>: <AiOutlineClose size={40} />}
                     </div>    
                 </div>
             
-                <div className="hidden md:flex text-xl" >
+                <div className="hidden lg:flex text-xl" >
                 {
                     NAVIGATION_ITEMS.map((item)=>(
                         <div className='mx-7' >
