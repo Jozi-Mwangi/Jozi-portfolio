@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import PropProvider, { PropContext } from '../context-provider'
 
 const RightPanel = () => {
-//   return (
-//     <div className='w-full hidden fixed md:right-0 xl:right-0 bottom-10 md:flex ' >
-//         <div className='flex justify-between items-center' >
-//             <a href='mailto:jozi.mwangi@gmail.com' className='w-5 p-2 text-sm' >jozi.mwangi@gmail.com</a>
-//             {/* <div>Hello world</div> */}
-//             <span class=" mx-5 h-[400px] bg-green-300 w-[10px] rotate-90"></span>
-//         </div>
-//     </div>
-//   )
+
+    const {nav} = PropProvider()
+
     return (
-        <div className='right-[10px] bottom-0' >
-            <span>jozi.mwangi@gmail.com</span>
+        <div className={ nav?'fixed hidden md:-right-60 xl:-right-64 md:flex bottom-36  transform rotate-90 ': "hidden"} > 
+            {/* rotate-90 */}
+            <div className=' flex gap-3 items-center ' >
+                {/* <div>jozi.mwangi@gmail.com</div> */}
+                  <a href='mailto:jozi.mwangi@gmail.com' className=' p-2 text-lg' >jozi.mwangi@gmail.com</a>
+
+                <div className="h-1 bg-slate-300 w-[500px]"></div>
+            </div>   
 
         </div>
     )

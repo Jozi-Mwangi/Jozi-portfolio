@@ -1,3 +1,4 @@
+import PropProvider from './context-provider'
 import './globals.css'
 import { Plus_Jakarta_Sans } from 'next/font/google'
 import Nav from './components/Nav'
@@ -12,14 +13,17 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
-      <body style={{font: "Plus_Jakarta_Sans" }}  >
-        <div className='h-full mx-auto' >
-          <Nav/>
-          <LeftPanel/>
-          {children}
-          <RightPanel/>
+      <body style={{font: "Plus_Jakarta_Sans" }} className='bg-white' >
+        <div className='relative h-full w-full mx-auto' >
+          <PropProvider>
+            <Nav />
+            <LeftPanel />
+            {children}
+            <RightPanel />
+          </PropProvider>
         </div>
       </body>
     </html>
