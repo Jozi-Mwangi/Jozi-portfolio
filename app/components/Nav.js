@@ -4,7 +4,7 @@ import "dotenv/config"
 import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 
-import PropProvider, { PropContext } from "../context-provider"
+import  { PropContext } from "./context-provider"
 
 import { BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs"
 import { MdMenu } from "react-icons/md"
@@ -15,15 +15,15 @@ import { AiOutlineClose } from "react-icons/ai"
 require("dotenv").config();
 
 const NAVIGATION_ITEMS = [
-    {title:"About"},
-    {title:"Contact"},
-    {title:"Projects"}
+    {title:"About", href:"#about"},
+    {title:"Contact", href:"#contact"},
+    {title:"Projects", href:"#projects"}
 ]
 
 
 const Nav = ({}) => {
 
-    const {nav, handleNav} = PropProvider( )
+    const {nav, handleNav} = useContext(PropContext)
   return (
     <nav className="backdrop-blur-sm transition-all duration-300 translate-y-0" >
         <div className="flex flex-col justify-between px-4 py-2 items-center" >
@@ -39,9 +39,9 @@ const Nav = ({}) => {
                 <div className="hidden lg:flex text-xl" >
                 {
                     NAVIGATION_ITEMS.map((item)=>(
-                        <div className='mx-7' >
+                        <a className='mx-7' key={item.title} href={item.href} >
                             {item.title}
-                        </div>
+                        </a>
                     ))
                 }    
                 </div>            
@@ -51,9 +51,9 @@ const Nav = ({}) => {
             <div className={ !nav ?'my-4 flex flex-col items-center w-full text-3xl' : 'hidden'} >
                 {
                     NAVIGATION_ITEMS.map((item)=>(
-                        <div className='my-7' >
+                        <a className='my-7' key={item.title} href={item.href} >
                             {item.title.toUpperCase()}
-                        </div>
+                        </a>
                     ))
                 }
                 <div className='my-7 w-full flex justify-center gap-6 border-b pb-7'>

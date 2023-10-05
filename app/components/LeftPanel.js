@@ -1,8 +1,14 @@
-import React from 'react'
+"use client"
+
+import React, { useContext } from 'react'
 import { BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs"
 import { FaXTwitter } from 'react-icons/fa6'
+import { PropContext } from './context-provider'
 
-const LeftPanel = ({nav}) => {
+const LeftPanel = () => {
+
+  const { nav } =useContext(PropContext)
+
   return (
     <div className={nav?'hidden fixed md: -left-72  xl:-left-72 md:flex bottom-36 transform rotate-90':"hidden"} >
         

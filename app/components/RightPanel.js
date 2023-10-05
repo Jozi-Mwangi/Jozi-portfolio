@@ -1,9 +1,11 @@
+"use client"
+
 import React, { useContext } from 'react'
-import PropProvider, { PropContext } from '../context-provider'
+import { PropContext } from './context-provider'
 
 const RightPanel = () => {
 
-    const {nav} = PropProvider()
+    const {nav} = useContext(PropContext)
 
     return (
         <div className={ nav?'fixed hidden md:-right-60 xl:-right-64 md:flex bottom-36  transform rotate-90 ': "hidden"} > 
