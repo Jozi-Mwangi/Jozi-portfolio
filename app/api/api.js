@@ -3,17 +3,19 @@ import axios from "axios";
 // const axios = require('axios')
 
 export async function getData (){
-    let data;
-    await axios.get("http://127.0.0.1:8000/")
-        .then(res=>{
-            console.log("fetching data");
-            data = res.data;
-            return data.json()
-        })
-        .catch(err=>{
-            return err.message
-        })
-        console.log(data);
+
+    try {
+        const response = await axios.get("http://127.0.0.1:8000/");
+        console.log("Fetching data")
+        // data.json()
+        console.log("From Backend");
+        console.log(response.data);
+        return response.data
+
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
 }
 
 // export default getData

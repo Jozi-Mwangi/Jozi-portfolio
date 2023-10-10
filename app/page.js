@@ -8,7 +8,7 @@ export default function Home() {
   return (
       <main className="flex flex-col mx-10 my-5 min-h-screen gap-7  px-5 xs:px-9 sm:px-11 md:px-24 ">
       
-        <div className=" flex flex-col min-h-screen lg:flex-row lg:items-center" >
+        <div className="" >
           <div className=" flex flex-col w-full mt-8" >
             
             <span className="text-blue-500 pb-1 text-sm font-mono" >Hello,my name is</span>
