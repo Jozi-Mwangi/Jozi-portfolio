@@ -5,7 +5,7 @@ import axios from "axios";
 export async function getData (){
 
     try {
-        const response = await axios.get("http://127.0.0.1:8000/projects");
+        const response = await axios.get("http://127.0.0.1:8000/projects/");
         console.log("From Backend");
         console.log(response.data);
 ;

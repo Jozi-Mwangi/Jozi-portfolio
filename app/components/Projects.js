@@ -72,7 +72,7 @@ const Projects = () => {
             <a href="https://bbnwebsite.vercel.app" className="h-full ">
               <img
                 alt="Church-img"
-                src={item.job_images}
+                src="/Church_Image.jpg"
                 className="md:h-auto object-cover  "
               />
             </a>

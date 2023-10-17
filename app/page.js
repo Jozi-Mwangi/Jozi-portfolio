@@ -3,6 +3,7 @@ import { BsFillCloudDownloadFill } from "react-icons/bs";
 
 import About from "./components/About";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
           <p className="text-2xl lg:my-2 lg:text-4xl font-bold text-gray-400 pb-2">
             I build products using code.
           </p>
-          <p className="lg:my-3 pb-8 lg:text-xl">
+          <p className="lg:my-3 pb-8 md:text-2xl">
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt
             <br /> ut labore et dolore magna aliqua. Ut enim ad minim veniam.{" "}
@@ -32,13 +33,21 @@ export default function Home() {
         </div>
 
         <div className="w-full flex justify-center ">
-          <Image src="/dev.png" height={400} className="lg:w-full" width={400} alt="dev-image" />
+          <Image
+            src="/dev.png"
+            height={400}
+            className="lg:w-full"
+            width={400}
+            alt="dev-image"
+          />
         </div>
       </div>
 
       <About />
 
       <Projects />
+
+      <Contact/>
     </main>
   );
 }

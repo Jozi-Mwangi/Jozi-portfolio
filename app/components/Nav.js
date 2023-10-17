@@ -25,7 +25,7 @@ const Nav = ({}) => {
 
     const {nav, handleNav} = useContext(PropContext)
   return (
-    <nav className="backdrop-blur-sm transition-all duration-300 translate-y-0" >
+    <nav className="sticky bg-white bg-opacity-90 transition-all duration-300 translate-y-0" >
         <div className="flex flex-col justify-between px-4 py-2 items-center" >
             <div className="flex mx-auto md:px-24 justify-between w-full items-center" >
                 <div className=''><Image src="/profile.png" height={50} className='rounded-full' width={50} alt='profile' /></div>
