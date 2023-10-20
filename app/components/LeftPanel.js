@@ -10,7 +10,7 @@ const LeftPanel = () => {
   const { nav } =useContext(PropContext)
 
   return (
-    <div className={nav?'hidden fixed md: -left-72  xl:-left-72 md:flex bottom-36 transform rotate-90':"hidden"} >
+    <div className={nav?'hidden fixed md:-left-60  xl:-left-64 md:flex bottom-36 transform rotate-90':"hidden"} >
         
         <div className='flex gap-3 items-center ' >
           
