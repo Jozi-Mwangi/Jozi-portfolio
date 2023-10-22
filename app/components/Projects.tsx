@@ -19,7 +19,7 @@ const Projects = async () => {
     },
   });
 
-  console.log(project);
+  // console.log(project);
 
   return (
     <div id="projects" className="px-5 py-5">
@@ -48,11 +48,11 @@ const Projects = async () => {
               {project.description}
             </p>
             <div className="flex flex-wrap text-xs w-full rounded gap-y-4 gap-x-8 font-roboto">
-              {
-                project.technologies.map(tech=>(
-                  <span className="p-2" key={tech.id} >{tech.name}</span>
-                ))
-              }
+              {project.technologies.map((tech) => (
+                <span className="p-2" key={tech.id}>
+                  {tech.name}
+                </span>
+              ))}
             </div>
             <div className="mt-4 hover:shadow-lg hover:shadow-blue-300 hover:-translate-y-0.5 rounded-full p-2 w-fit">
               <a href="https://bbnwebsite.vercel.app" target="_blank">
@@ -72,7 +72,6 @@ const Projects = async () => {
             </a>
           </div>
         </div>
-      
       </div>
       {/* {portfolioData.map((item, index)=>(
         <div key={index} >
