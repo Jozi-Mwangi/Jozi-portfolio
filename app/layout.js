@@ -17,13 +17,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body style={{font: "Plus_Jakarta_Sans" }} className='bg-white' >
-        <div className='relative h-full w-full mx-auto' >
+        <div className='min-h-screen relative h-full w-full mx-auto' >
+          <div className='w-full max-w-screen-xl mx-auto relative' >
             <PropProvider>
               <Nav />
               <LeftPanel />
               <RightPanel />
             </PropProvider>
             {children}
+          </div>
         </div>
       </body>
     </html>
