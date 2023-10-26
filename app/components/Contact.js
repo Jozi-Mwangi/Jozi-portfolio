@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div
       id="projects"
-      className="px-5 py-5 items-center text-center flex flex-col justify-center"
+      className="px-5 md:px-24 py-5 items-center text-center flex flex-col justify-center"
     >
       <div className="text-5xl pb-5 container w-fit font-extrabold">
         Get In Touch{" "}

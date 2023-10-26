@@ -7,7 +7,8 @@ import handler from "../app/pages/api/project";
 
 
 jest.mock("../app/pages/api/project", ()=>{
-    handler: jest.fn().mockResolvedValue({
+    __esModule : true
+         jest.fn().mockResolvedValue({
         id: 1,
         title: "BBN Church Website", 
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -25,13 +26,13 @@ jest.mock("../app/pages/api/project", ()=>{
 
 test("Should find web user name", async ()=>{
 
-    const { getByText } = await render()
-    const projectTitle =  getByText(/BBN Church Website/)
+    const { getByText } = await render(<PortfolioData/>)
+    // const projectTitle =  getByText(/BBN Church Website/)
 
-    await waitFor(()=>expect)
+    await waitFor(()=>getByText(/BBN Church Website/))
 
-    expect(await projectTitle).toBeInTheDocument();
+    // expect(await projectTitle).toBeInTheDocument();
 
-    expect(mock).toHaveBeenCalledTimes(1)
-    expect(mock).toHaveBeenCalledWith(1)
+    expect(handler).toHaveBeenCalledTimes(1)
+    expect(handler).toHaveBeenCalledWith(1)
 })
