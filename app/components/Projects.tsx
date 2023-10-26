@@ -7,6 +7,7 @@ import { MdOutlineOpenInNew } from "react-icons/md";
 
 import { PortfolioDataProps } from "../types";
 import { prisma } from "../pages/api/project";
+import Image from "next/image";
 
 const Projects: React.FC = async () => {
   console.log("FFront");
@@ -71,7 +72,7 @@ const Projects: React.FC = async () => {
           <div className="w-full h-full items-start top-0 left-0 p-4 flex lg:w-2/3 lg:absolute lg:left-auto lg:right-0 lg:top-auto lg:bg-transparent">
             {/* <div className="items-start top-0 left-0 p-4 flex flex-col" > */}
             <a href={portfolioData?.link} className="h-full " target="_blank">
-              <img
+              <Image
                 alt="Church-img"
                 src="/Church_Image.jpg"
                 className="md:h-auto object-cover  "
