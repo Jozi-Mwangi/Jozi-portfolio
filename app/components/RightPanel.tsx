@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useContext } from "react";
-import { PropContext } from "./context-provider";
+import React from "react";
+import { useNavContext } from "./context-provider";
+import { NavContextProps } from "../types";
 
 const RightPanel = () => {
-  const { nav } = useContext(PropContext);
+  const context = useNavContext() as NavContextProps;
+  const { nav } = context;
 
   return (
     <div

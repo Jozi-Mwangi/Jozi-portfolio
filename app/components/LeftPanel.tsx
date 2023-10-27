@@ -1,12 +1,15 @@
 "use client";
 
-import React, { useContext } from "react";
+import React from "react";
 import { BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
-import { PropContext } from "./context-provider";
+import { useNavContext} from "./context-provider";
+import { NavContextProps } from "../types";
 
 const LeftPanel = () => {
-  const { nav } = useContext(PropContext);
+
+  const context = useNavContext() as NavContextProps;
+  const { nav } = context;
 
   return (
     <div
