@@ -76,6 +76,8 @@ const Projects: React.FC = async () => {
                 alt="Church-img"
                 src="/Church_Image.jpg"
                 className="md:h-auto object-cover  "
+                width={600}
+                height={500}
               />
             </a>
           </div>

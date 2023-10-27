@@ -1,10 +1,12 @@
 "use client";
 
 import "dotenv/config";
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-import { PropContext } from "./context-provider";
+import { useNavContext } from "./context-provider";
+import { NavItemsProps, NavContextProps } from "../types";
+
 
 import { BsGithub, BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
 import { MdMenu } from "react-icons/md";
@@ -14,14 +16,16 @@ import { AiOutlineClose } from "react-icons/ai";
 
 require("dotenv").config();
 
-const NAVIGATION_ITEMS = [
+const NAVIGATION_ITEMS:NavItemsProps = [
   { title: "About", href: "#about" },
   { title: "Contact", href: "#contact" },
   { title: "Projects", href: "#projects" },
 ];
 
+
 const Nav = ({}) => {
-  const { nav, handleNav } = useContext(PropContext);
+  const context = useNavContext() as NavContextProps;
+  const { nav, handleNav } = context;
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
 
