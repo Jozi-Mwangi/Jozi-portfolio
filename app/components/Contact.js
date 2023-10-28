@@ -6,13 +6,13 @@ import { BsWhatsapp } from "react-icons/bs";
 const Contact = () => {
   return (
     <div
-      id="projects"
-      className="px-5 md:px-24 py-5 items-center text-center flex flex-col justify-center"
+      id="contact"
+      className="px-5 md:px-24 py-5 items-center text-center flex flex-col justify-center min-h-screen"
     >
-      <div className="text-5xl pb-5 container w-fit font-extrabold">
+      <div className="text-4xl pb-5 container w-fit font-extrabold">
         Get In Touch{" "}
       </div>
-      <p className="md:text-2xl text">
+      <p className="md:text-xl text">
         I'm currently looking for opportunities.
         <br /> Whether its a Full-Time Job or a Freelance work.
         <br /> Send me a message, I'll try to get back to you as soon as

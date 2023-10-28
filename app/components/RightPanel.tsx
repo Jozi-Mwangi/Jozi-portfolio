@@ -19,7 +19,7 @@ const RightPanel = () => {
       {/* rotate-90 */}
       <div className=" flex gap-3 items-center ">
         {/* <div>jozi.mwangi@gmail.com</div> */}
-        <a href="mailto:jozi.mwangi@gmail.com" className=" p-2 text-lg">
+        <a href="mailto:jozi.mwangi@gmail.com" className=" p-2 text-sm">
           jozi.mwangi@gmail.com
         </a>
 

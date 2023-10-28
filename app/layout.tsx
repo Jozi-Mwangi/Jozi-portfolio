@@ -12,15 +12,6 @@ import { ChildrenProps } from "./types";
 export const metadata = {
   title: "Jozi Port",
   description: "Mwangi Joseph's Portfolio",
-  openGraph: {
-    images: [
-      {
-        url: "/profile.png",
-        width: 800,
-        height: 600,
-      },
-    ],
-  },
 };
 
 // interface RootLayoutProps {

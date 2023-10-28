@@ -24,21 +24,20 @@ const NAVIGATION_ITEMS:NavItemsProps = [
 
 
 const Nav = ({}) => {
+  
   const context = useNavContext() as NavContextProps;
   const { nav, handleNav } = context;
-    const [prevScrollPos, setPrevScrollPos] = useState(0);
-    const [visible, setVisible] = useState(true);
 
-    useEffect(()=>{
-        const handleScroll = ()=>{
-            const currentScrollPos = window.scrollY;
-            setVisible(prevScrollPos>currentScrollPos || currentScrollPos == 0);
-            setPrevScrollPos(currentScrollPos)
-        }
-        window.addEventListener("scroll", handleScroll);
-        return ()=> window.removeEventListener("scroll", handleScroll);
-    },[prevScrollPos, visible])
-
+  const handleOverflow = () => {
+    handleNav()
+    document.body.style.overflowY = nav? "auto" : "hidden"
+  }
+  useEffect(()=>{
+    return ()=>{
+      document.body.style.overflowY = "auto"
+    }
+  },[])
+  
   return (
     <nav className={` bg-white bg-opacity-90 transition-all duration-300 translate-y-0`}>
       <div className="flex flex-col justify-between px-4 py-2 items-center">
@@ -53,13 +52,13 @@ const Nav = ({}) => {
             />
           </div>
 
-          <div onClick={handleNav} className="block lg:hidden">
+          <div onClick={handleOverflow} className="block lg:hidden">
             <div className="right-5">
               {nav ? <MdMenu size={40} /> : <AiOutlineClose size={40} />}
             </div>
           </div>
 
-          <div className="hidden lg:flex text-xl">
+          <div className="hidden lg:flex text-lg font-mono">
             {NAVIGATION_ITEMS.map((item) => (
               <a className="mx-7" key={item.title} href={item.href}>
                 {item.title}

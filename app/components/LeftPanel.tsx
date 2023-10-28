@@ -25,7 +25,7 @@ const LeftPanel = () => {
           target="_blank"
           className="-rotate-90 transition-all text-slate-800 hover:text-blue-500 hover:translate-x-0.5 p-2"
         >
-          <BsGithub size={30} />
+          <BsGithub size={20} />
         </a>
 
         <a
@@ -33,7 +33,7 @@ const LeftPanel = () => {
           target="_blank"
           className="-rotate-90 transition-all text-slate-800 hover:text-blue-500 hover:translate-x-0.5 p-2"
         >
-          <BsInstagram size={30} />
+          <BsInstagram size={20} />
         </a>
 
         <a
@@ -41,14 +41,14 @@ const LeftPanel = () => {
           target="_blank"
           className="-rotate-90 transition-all text-slate-800 hover:text-blue-500 hover:translate-x-0.5 p-2"
         >
-          <BsLinkedin size={30} />
+          <BsLinkedin size={20} />
         </a>
         <a
           href="https://twitter.com/JoeKaffeine"
           target="_blank"
           className="-rotate-90 transition-all text-slate-800 hover:text-blue-500 hover:translate-x-0.5 p-2"
         >
-          <FaXTwitter size={30} />
+          <FaXTwitter size={20} />
         </a>
 
         <div className="h-1 bg-slate-300 w-[500px]"></div>
