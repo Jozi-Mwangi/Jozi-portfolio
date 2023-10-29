@@ -5,21 +5,19 @@ import React from "react";
 import { MdOutlineOpenInNew } from "react-icons/md";
 // import fetchProject from "../api/project.js";
 
-import { PortfolioDataProps } from "../types";
+import { PortfolioDataProps, Technology } from "../types";
 import { prisma } from "../pages/api/project";
 import Image from "next/image";
 
 const Projects: React.FC = async () => {
   console.log("FFront");
 
-  const portfolioData = await prisma.project.findUnique({
-    where: {
-      id: 1,
+  const portfolioData = await prisma.project.findMany({ 
+    take:2,
+    include:{
+      technologies:true
     },
-    include: {
-      technologies: true,
-    },
-  });
+   });
 
   // if(!portfolioData){
   //   return (
@@ -37,8 +35,10 @@ const Projects: React.FC = async () => {
       </div>
 
       <div>
-        <div
-          key={portfolioData?.id??"It is null"}
+        {
+          portfolioData?.map((project)=>(
+            <div
+          key={project.id}
           className="flex flex-col-reverse items-center relative lg:flex-row md:gap-3 mb-10 lg:border-none shadow-md border rounded overflow-hidden lg:overflow-visible "
         >
           <div className="w-full lg:w-2/3 xl:w-1/2 z-10 bg-transparent p-4 lg:mt-3">
@@ -46,17 +46,17 @@ const Projects: React.FC = async () => {
               Featured Projects
             </h4>
             <a
-              href={portfolioData?.link}
+              href={project.link}
               target="_blank"
               className="text-xl font-bold px-4"
             >
-              {portfolioData?.title}
+              {project.title}
             </a>
             <p className="p-4 lg:bg-blue-500 lg:text-white lg:px-3 lg:my-4">
-              {portfolioData?.description}
+              {project.description}
             </p>
             <div className="flex flex-wrap text-xs w-full rounded gap-y-4 gap-x-8 font-roboto">
-              {portfolioData?.technologies.map((tech) => (
+              {project.technologies.map((tech) => (
                 <span className="p-2" key={tech.id}>
                   {tech.name}
                 </span>
@@ -71,7 +71,7 @@ const Projects: React.FC = async () => {
 
           <div className="w-full h-full items-start top-0 left-0 p-4 flex lg:w-2/3 lg:absolute lg:left-auto lg:right-0 lg:top-auto lg:bg-transparent">
             {/* <div className="items-start top-0 left-0 p-4 flex flex-col" > */}
-            <a href={portfolioData?.link} className="h-full " target="_blank">
+            <a href={project.link} className="h-full " target="_blank">
               <Image
                 alt="Church-img"
                 src="/Church_Image.jpg"
@@ -82,6 +82,9 @@ const Projects: React.FC = async () => {
             </a>
           </div>
         </div>
+          ))
+        
+        }
       </div>
       {/* {portfolioData.map((item, index)=>(
         <div key={index} >

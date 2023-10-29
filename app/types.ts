@@ -1,12 +1,15 @@
 export interface PortfolioDataProps {
-    id: number,
-    link: string,
-    title: string,
-    description: string,
-    technologies:string[]
+    id?: number,
+    link?: string,
+    title?: string,
+    description?: string,
+    imageUrl?:string,
+    technologies?:Technology[]
   }
   
-export  interface ChildrenProps {
+export type Technology = string
+
+  export  interface ChildrenProps {
     children: React.ReactNode
   }
   
