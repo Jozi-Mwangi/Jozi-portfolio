@@ -34,7 +34,7 @@ const Projects: React.FC = async () => {
         <div className="h-px flex-grow max-w-xs bg-blue-100"></div>
       </div>
 
-      <div>
+      <div className="space-y-24 py-24" >
         {
           portfolioData?.map((project)=>(
             <div
@@ -74,7 +74,7 @@ const Projects: React.FC = async () => {
             <a href={project.link} className="h-full " target="_blank">
               <Image
                 alt="Church-img"
-                src="/Church_Image.jpg"
+                src={project.imageUrl}
                 className="md:h-auto object-cover  "
                 width={600}
                 height={500}

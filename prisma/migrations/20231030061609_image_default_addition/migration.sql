@@ -1,7 +1,7 @@
 /*
   Warnings:
 
-  - Added the required column `imageUrl` to the `Project` table without a default value. This is not possible if the table is not empty.
+  - Made the column `imageUrl` on table `Project` required. This step will fail if there are existing NULL values in that column.
 
 */
 -- RedefineTables
@@ -11,9 +11,9 @@ CREATE TABLE "new_Project" (
     "title" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "link" TEXT NOT NULL,
-    "imageUrl" TEXT DEFAULT "/Dev.jpg"
+    "imageUrl" TEXT NOT NULL
 );
-INSERT INTO "new_Project" ("description", "id", "link", "title") SELECT "description", "id", "link", "title" FROM "Project";
+INSERT INTO "new_Project" ("description", "id", "imageUrl", "link", "title") SELECT "description", "id", "imageUrl", "link", "title" FROM "Project";
 DROP TABLE "Project";
 ALTER TABLE "new_Project" RENAME TO "Project";
 PRAGMA foreign_key_check;
