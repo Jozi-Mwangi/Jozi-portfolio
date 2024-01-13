@@ -35,7 +35,7 @@ const Nav = ({}) => {
   useEffect(()=>{
     return ()=>{
       document.body.style.overflowY = "auto"
-    }
+    } 
   },[])
   
   return (
