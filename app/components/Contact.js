@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="px-5 md:px-24 py-5 items-center text-center flex flex-col justify-center min-h-screen"
+      className="px-5 md:px-24 py-5 md:py-16 items-center text-center flex flex-col justify-center "
     >
       <div className="text-4xl pb-5 container w-fit font-extrabold">
         Get In Touch{" "}

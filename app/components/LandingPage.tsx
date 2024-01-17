@@ -25,7 +25,7 @@ const LandingPage = () => {
             expertise in my pursuits."
           </p>
           <button className="border w-fit p-3 rounded-2xl">
-            <a href="/CV Joseph Mwangi.pdf" download="CV Joseph Mwangi.pdf" className=" flex gap-3  items-center my-2 justify-center" >
+            <a href="/Mwangi Software CV.pdf" download="Mwangi Software CV.pdf" className=" flex gap-3  items-center my-2 justify-center" >
             <span>
               <BsFillCloudDownloadFill />
             </span>
