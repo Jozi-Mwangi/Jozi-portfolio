@@ -18,11 +18,7 @@ const LandingPage = () => {
             I build products using code.
           </p>
           <p className="lg:my-3 pb-8 md:text-xl">
-            "I'm a passionate creator and learner based in Nairobi, Kenya.
-            Self-taught in full-stack development, I'm on a journey to master
-            the art of software engineering. Currently, I'm also pursuing a
-            degree in mechanical engineering, blending creativity and technical
-            expertise in my pursuits."
+            "Bridging the gap between machines and code. I'm a Mechanical Engineering graduate with a developer's soul, always on the lookout for ideas to turn into innovative ventures."
           </p>
           <button className="border w-fit p-3 rounded-2xl">
             <a href="/Mwangi Software CV.pdf" download="Mwangi Software CV.pdf" className=" flex gap-3  items-center my-2 justify-center" >
